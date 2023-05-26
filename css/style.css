@@ -1,0 +1,340 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ html{
+    scroll-behavior: smooth;
+ }
+
+/* CSS Variables */
+:root {
+    --navbar-height: 59px;
+}
+
+/* Navigation Bar */
+
+#navbar {
+    /* we are displaying 'Flexbox' which is a one-dimensional 
+    layout method for arranging items in rows or columns.  */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky; /* you'r navbar will get sticky whenever you scroll down you'r website */ 
+    top: 0px; /* if you want you'r navbar work sticky give the top value 0px like these |top: 0px| */
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+#navbar ul li {
+    /* 'list-style: none;' means it will help to remove point from the ul */
+    list-style: none;
+    font-size: 1.3rem;
+
+}
+
+/* if we want all the content to be at cenete type 'justify-content: center;' */
+
+/* For Navigation Bar: Logo & Image */
+#logo {
+    margin: 5px 15px;
+    position: relative;
+}
+
+#logo img {
+    height: 40px;
+    margin: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+
+#logo img:hover{
+
+animation: shake 0.5s;
+animation-iteration-count: infinite;
+
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+/* For Navigation Bar: List Styling */
+/* we are using 'position: relative;' it will help An element with positioned relative to its normal position. 
+Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be 
+adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element. */
+
+
+#navbar ul {
+    display: flex;
+    font-family: 'Baloo Bhai 2', cursive;
+
+}
+
+
+
+#navbar ul li a {
+    color: white;
+    display: block;
+    padding: 5px 25px;
+    border-radius: 20px;
+    /* 'text-decoration: none;' means it will help to remove the underlie from the list element */
+    text-decoration: none;
+    position: relative;
+
+}
+
+#navbar ul li a::after{
+
+content: '';
+width: 0;
+height: 3px;
+background: #1fce1f;
+position: absolute;
+left: 0;
+bottom: -6px;
+
+}
+
+#navbar ul li a:hover::after{
+width: 100%;
+transition: 0.2s;
+
+}
+
+
+
+
+/* we are using The ':hover' selector CSS pseudo-class matches when the user interacts
+ with an element with a pointing device, but does not necessarily activate it. */
+#navbar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Starting Home Section */
+#home {
+    display: flex;
+    /* 'flex-direction: column;' it will help the iteam to be one after onother  */
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 290px;
+    /* we are using justify-content: center; it will help the content be at the center*/
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    background: url('../bg.png') no-repeat center center/cover;
+    height: 400px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#home h1 {
+    color: white;
+    text-align: center;
+    font-size: 3.5rem;
+
+}
+
+#home p {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+
+
+
+}
+
+/* Services Section */
+#services {
+    margin: 34px;
+    display: flex;
+}
+
+#services .box {
+    border: 2px solid brown;
+    padding: 10px;
+    margin: 3px 10px;
+    border-radius: 25px;
+    background: #c4ddbf;
+    margin-bottom: 10px;
+}
+
+#services .box img {
+    height: 240px;
+    /* always set a 'display: block;' & 'height or width' to work 'margin: auto;' */
+    margin: auto;
+    display: block;
+}
+
+#services .box p {
+    font-family: 'Bree Serif', serif;
+    font-size: 0.9rem;
+}
+
+/* Clients Section */
+#client-section {
+    position: relative;
+    height: 350px;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    background: url('../bg1.png');
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-item {
+    padding: 50px;
+}
+
+#clients img {
+    height: 130px;
+
+}
+
+/* Contact Section */
+#contact {
+    position: relative;
+
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    background: url('../contact.png') no-repeat center center/cover;
+}
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+#contact-box input,
+#contact-box textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+}
+#contact-box form{
+    width: 40%;
+    
+}
+#contact-box label{
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+/* Utility Classes */
+.h-primary {
+    font-size: 3rem;
+    padding: 20px;
+    font-family: 'Bree Serif', serif;
+
+}
+
+.h-secondary {
+    font-size: 2.2rem;
+    padding: 20px;
+    font-family: 'Bree Serif', serif;
+
+}
+
+.btn {
+    padding: 8px 6px;
+    border: 2px solid white;
+    background-color: darkgreen;
+    color: white;
+    margin: 15px;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
